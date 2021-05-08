@@ -45,17 +45,15 @@ namespace OyunBackEnd
             };
 
             CustomerManager managerDal = new CustomerManager(new CustomerValidationManager());
-
-            managerDal.Add(customer1);
-
-            managerDal.Delete(customer1);
-
             SalesManager salesManager1 = new SalesManager();
-            salesManager1.Buy(customer1, game2, (float)29.99);
-
             CampaignManager campaignManager1 = new CampaignManager();
+            
+            managerDal.Add(customer1);
+            managerDal.Delete(customer1);
             campaignManager1.Add(campaign1);
 
+            salesManager1.Buy(customer1, game2);
+            salesManager1.BuyCampaign(customer1, game1, campaign1);
             Console.ReadLine();
         }
     }

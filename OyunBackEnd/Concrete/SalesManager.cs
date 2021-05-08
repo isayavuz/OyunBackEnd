@@ -8,9 +8,14 @@ namespace OyunBackEnd.Concrete
 {
     class SalesManager : ISalesService
     {
-        public void Buy(Customer customer, Game game, float Price)
+        public void Buy(Customer customer, Game game)
         {
-            Console.WriteLine(game.NameOfTheGame+" oyunu "+customer.FirstName+" kişisine "+ Price +"TL fiyat karşılığında satıldı.");
+            Console.WriteLine(game.NameOfTheGame+" oyunu "+customer.FirstName+" kişisine "+ game.Price +"TL fiyat karşılığında satıldı.");
+        }
+
+        public void BuyCampaign(Customer customer, Game game, Campaign campaign)
+        {
+            Console.WriteLine(game.NameOfTheGame + " oyunu " + customer.FirstName + " kişisine " + (game.Price-campaign.Discount) + "TL fiyat karşılığında satıldı.");
         }
     }
 }

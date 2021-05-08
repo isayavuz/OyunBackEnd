@@ -7,6 +7,7 @@ namespace OyunBackEnd.Abstract
 {
     public interface ISalesService
     {
-        void Buy(Customer customer, Game game, float Price);
+        void Buy(Customer customer, Game game);
+        void BuyCampaign(Customer customer, Game game, Campaign campaign);
     }
 }
